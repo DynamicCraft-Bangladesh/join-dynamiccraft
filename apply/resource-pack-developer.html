@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DynamicCraft Resource Pack Developer Application Form</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #333;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 700px;
+            background: #fff;
+            padding: 2em;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 1.5em;
+            color: #444;
+        }
+
+        .form-group {
+            margin-bottom: 1.5em;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5em;
+            font-weight: 600;
+            color: #555;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75em;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 1em;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+        .form-group textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .error {
+            color: red;
+            font-size: 0.9em;
+        }
+
+        .success {
+            color: green;
+            font-size: 1em;
+        }
+
+        .loading {
+            font-size: 1em;
+            color: blue;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 0.75em 1.5em;
+            font-size: 1em;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        button:active {
+            transform: scale(0.98);
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 1em;
+            }
+
+            h1 {
+                font-size: 1.5em;
+            }
+        }
+
+        .checkbox-label {
+            display: flex;
+            align-items: center;
+        }
+
+        .checkbox-label input[type="checkbox"] {
+            margin-right: 8px;
+            /* Adjust space between checkbox and text */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>DynamicCraft Resource Pack Developer Application Form</h1>
+        <form id="staffForm">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <div id="nameError" class="error"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="in_game_username">In-Game Username:</label>
+                <input type="text" id="in_game_username" name="in_game_username" required>
+                <div id="in_game_usernameError" class="error"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" required>
+                <div id="ageError" class="error"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <div id="emailError" class="error"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="discord_username">Discord Username:</label>
+                <input type="text" id="discord_username" name="discord_username" required>
+                <div id="discord_usernameError" class="error"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="experience_years">Experience (years):</label>
+                <input type="number" id="experience_years" name="experience_years" required>
+                <div id="experience_yearsError" class="error"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="previous_projects">Previous Projects:</label>
+                <textarea id="previous_projects" name="previous_projects" required></textarea>
+                <div id="previous_projectsError" class="error"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="reason_for_applying">Reason for Applying:</label>
+                <textarea id="reason_for_applying" name="reason_for_applying" required></textarea>
+                <div id="reason_for_applyingError" class="error"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="skills">Skills:</label>
+                <textarea id="skills" name="skills" required></textarea>
+                <div id="skillsError" class="error"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="weekly_availability">Weekly Availability (hours):</label>
+                <input type="number" id="weekly_availability" name="weekly_availability" required>
+                <div id="weekly_availabilityError" class="error"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="timezone">Timezone:</label>
+                <input type="text" id="timezone" name="timezone" required>
+                <div id="timezoneError" class="error"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="handle_texture_design">Handle Texture Design:</label>
+                <textarea id="handle_texture_design" name="handle_texture_design" required></textarea>
+                <div id="handle_texture_designError" class="error"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="handle_feedback">Handle Feedback:</label>
+                <textarea id="handle_feedback" name="handle_feedback" required></textarea>
+                <div id="handle_feedbackError" class="error"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="special_tools_used">Special Tools Used:</label>
+                <textarea id="special_tools_used" name="special_tools_used" required></textarea>
+                <div id="special_tools_usedError" class="error"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="portfolio_link">Portfolio Link:</label>
+                <input type="url" id="portfolio_link" name="portfolio_link" required>
+                <div id="portfolio_linkError" class="error"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="additional_information">Additional Information (Optional):</label>
+                <textarea id="additional_information" name="additional_information"></textarea>
+                <div id="additional_informationError" class="error"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="agreed_to_terms" class="checkbox-label">
+                    I agree to the terms and conditions (check the box below)
+                    <input type="checkbox" id="agreed_to_terms" name="agreed_to_terms" required>
+                </label>
+                <div id="agreed_to_termsError" class="error"></div>
+            </div>            
+
+            <div id="multiple_submitError" class="error"></div>
+
+            <button type="submit" id="submitButton">Submit</button>
+            <div id="responseMessage" class="loading"></div>
+        </form>
+
+    </div>
+
+    <script>
+        document.getElementById('staffForm').addEventListener('submit', async (event) => {
+            event.preventDefault();
+
+            const submitButton = document.getElementById('submitButton');
+            submitButton.disabled = true; // Disable the button to prevent multiple submissions
+            const responseMessage = document.getElementById('responseMessage');
+            responseMessage.textContent = 'Submitting...'; // Show loading indicator
+            responseMessage.className = 'loading';
+
+            const formData = new FormData(event.target);
+
+            try {
+                const response = await fetch('https://staff-form-backend-cf.sigmakib.workers.dev/rpdev', {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': '*/*',
+                        'User-Agent': 'Thunder Client (https://www.thunderclient.com)'
+                    }
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    if (data.success) {
+                        responseMessage.textContent = 'Form submitted successfully!';
+                        responseMessage.className = 'success';
+                        event.target.reset(); // Reset the form after successful submission
+                    } else {
+                        responseMessage.textContent = 'Submission failed. Please try again.';
+                        responseMessage.className = 'error';
+                    }
+                } else {
+                    // Handle validation errors
+                    if (data.error) {
+                        data.error.forEach(err => {
+                            const errorField = document.getElementById(err.path[0] + 'Error');
+                            if (errorField) {
+                                errorField.textContent = err.message;
+                            }
+                        });
+                        responseMessage.textContent = 'There were errors with your submission. Please fix them and try again.';
+                        responseMessage.className = 'error';
+                    } else {
+                        responseMessage.textContent = 'An unknown error occurred. Please try again.';
+                        responseMessage.className = 'error';
+                    }
+                }
+            } catch (error) {
+                responseMessage.textContent = 'Network error. Please check your connection and try again.';
+                responseMessage.className = 'error';
+            }
+
+            submitButton.disabled = false; // Re-enable the button for future submissions
+        });
+    </script>
+</body>
+
+</html>
