@@ -1,0 +1,291 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Application Form</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #333;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 700px;
+            background: #fff;
+            padding: 2em;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 1.5em;
+            color: #444;
+        }
+
+        .form-group {
+            margin-bottom: 1.5em;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5em;
+            font-weight: 600;
+            color: #555;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 0.75em;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 1em;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus, .form-group textarea:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+        .form-group textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .error {
+            color: red;
+            font-size: 0.9em;
+        }
+
+        .success {
+            color: green;
+            font-size: 1em;
+        }
+
+        .loading {
+            font-size: 1em;
+            color: blue;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 0.75em 1.5em;
+            font-size: 1em;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        button:active {
+            transform: scale(0.98);
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 1em;
+            }
+
+            h1 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Staff Application Form</h1>
+        <form id="staffForm">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <div id="nameError" class="error"></div>
+            </div>
+
+
+            <div class="form-group">
+                <label for="in_game_username">In-Game Username:</label>
+                <input type="text" id="in_game_username" name="in_game_username" required>
+                <div id="in_game_usernameError" class="error"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" required>
+                <div id="ageError" class="error"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <div id="emailError" class="error"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="discord_username">Discord Username:</label>
+                <input type="text" id="discord_username" name="discord_username" required>
+                <div id="discord_usernameError" class="error"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="minecraft_experience">Minecraft Experience (years):</label>
+                <input type="number" id="minecraft_experience" name="minecraft_experience" required>
+                <div id="minecraft_experienceError" class="error"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="server_experience">Server Experience (years):</label>
+                <input type="number" id="server_experience" name="server_experience" required>
+                <div id="server_experienceError" class="error"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="previous_staff_experience">Previous Staff Experience:</label>
+                <textarea id="previous_staff_experience" name="previous_staff_experience"></textarea>
+                <div id="previous_staff_experienceError" class="error"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="reason_for_applying">Reason for Applying:</label>
+                <textarea id="reason_for_applying" name="reason_for_applying" required></textarea>
+                <div id="reason_for_applyingError" class="error"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="skills">Skills:</label>
+                <textarea id="skills" name="skills" required></textarea>
+                <div id="skillsError" class="error"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="weekly_availability">Weekly Availability (hours):</label>
+                <input type="number" id="weekly_availability" name="weekly_availability" required>
+                <div id="weekly_availabilityError" class="error"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="timezone">Timezone:</label>
+                <input type="text" id="timezone" name="timezone" required>
+                <div id="timezoneError" class="error"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="handle_rule_breaking">Handle Rule Breaking:</label>
+                <textarea id="handle_rule_breaking" name="handle_rule_breaking" required></textarea>
+                <div id="handle_rule_breakingError" class="error"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="handle_conflict">Handle Conflict:</label>
+                <textarea id="handle_conflict" name="handle_conflict" required></textarea>
+                <div id="handle_conflictError" class="error"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="staff_abuse">Handle Staff Abuse:</label>
+                <textarea id="staff_abuse" name="staff_abuse" required></textarea>
+                <div id="staff_abuseError" class="error"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="special_skills">Special Skills (Optional):</label>
+                <textarea id="special_skills" name="special_skills"></textarea>
+                <div id="special_skillsError" class="error"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="additional_information">Additional Information (Optional):</label>
+                <textarea id="additional_information" name="additional_information"></textarea>
+                <div id="additional_informationError" class="error"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="agreed_to_terms">
+                    <input type="checkbox" id="agreed_to_terms" name="agreed_to_terms" required>
+                    I agree to the terms and conditions
+                </label>
+                <div id="agreed_to_termsError" class="error"></div>
+            </div>
+
+            <button type="submit" id="submitButton">Submit</button>
+            <div id="responseMessage" class="loading"></div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('staffForm').addEventListener('submit', async (event) => {
+            event.preventDefault();
+
+            const submitButton = document.getElementById('submitButton');
+            submitButton.disabled = true; // Disable the button to prevent multiple submissions
+            const responseMessage = document.getElementById('responseMessage');
+            responseMessage.textContent = 'Submitting...'; // Show loading indicator
+            responseMessage.className = 'loading';
+
+            const formData = new FormData(event.target);
+
+            try {
+                const response = await fetch('https://staff-form-backend-cf.sigmakib.workers.dev/mcstaff', {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': '*/*',
+                        'User-Agent': 'Thunder Client (https://www.thunderclient.com)'
+                    }
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    if (data.success) {
+                        responseMessage.textContent = 'Form submitted successfully!';
+                        responseMessage.className = 'success';
+                        event.target.reset(); // Reset the form after successful submission
+                    } else {
+                        responseMessage.textContent = 'Submission failed. Please try again.';
+                        responseMessage.className = 'error';
+                    }
+                } else {
+                    // Handle validation errors
+                    if (data.error) {
+                        data.error.forEach(err => {
+                            const errorField = document.getElementById(err.path[0] + 'Error');
+                            if (errorField) {
+                                errorField.textContent = err.message;
+                            }
+                        });
+                        responseMessage.textContent = 'There were errors with your submission. Please fix them and try again.';
+                        responseMessage.className = 'error';
+                    } else {
+                        responseMessage.textContent = 'An unknown error occurred. Please try again.';
+                        responseMessage.className = 'error';
+                    }
+                }
+            } catch (error) {
+                responseMessage.textContent = 'Network error. Please check your connection and try again.';
+                responseMessage.className = 'error';
+            }
+
+            submitButton.disabled = false; // Re-enable the button for future submissions
+        });
+    </script>
+</body>
+</html>
