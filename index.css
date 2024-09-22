@@ -68,12 +68,12 @@ h2 {
     display: block;
     padding: 15px; /* Padding inside the links */
     text-decoration: none; /* Remove underline */
-    color: #ffffff; /* White text */
+    color: #000000; /* White text */
     font-size: 20px; /* Font size */
 }
 
 .application-list a:hover {
-    background-color: #0056b3; /* Darker blue on hover */
+    background-color: #004691; /* Darker blue on hover */
     transform: translateY(-5px); /* Lift effect on hover */
 }
 
