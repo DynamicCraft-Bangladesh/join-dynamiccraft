@@ -1,0 +1,97 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* Background image with blur effect */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('/public/Screenshot_202.png') no-repeat center center fixed;
+    background-size: cover;
+    filter: blur(8px); /* Blur effect only on background */
+    z-index: -1; /* Place it behind the content */
+}
+
+.container {
+    z-index: 2; /* Ensure content appears above the blurred background */
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.message-box {
+    background-color: rgba(22, 27, 34, 0.616); /* Semi-transparent to show the blurred background */
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 500px;
+}
+
+h1 {
+    font-size: 32px;
+    color: #58a6ff;
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: whitesmoke;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+p {
+    color: whitesmoke;
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+.return-home a {
+    display: inline-block;
+    background-color: #58a6ff;
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.return-home a:hover {
+    background-color: #1f6feb;
+}
+
+/* Footer */
+footer {
+    background-color: rgba(22, 27, 34, 0.9); /* Semi-transparent to match the message box */
+    padding: 15px;
+    width: 100%;
+    text-align: center;
+    color: #c9d1d9;
+    font-size: 16px;
+    position: relative;
+    bottom: 0;
+}
+
+footer p {
+    margin: 0;
+}
